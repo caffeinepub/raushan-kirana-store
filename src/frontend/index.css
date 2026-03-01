@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fraunces - Display font for headings */
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Plus Jakarta Sans - Body font */
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Kirana Warm Palette - Light Mode */
+    /* Background: warm cream */
+    --background: 0.97 0.015 80;
+    /* Foreground: deep warm brown */
+    --foreground: 0.22 0.04 50;
+
+    /* Card: warm white */
+    --card: 0.99 0.008 75;
+    --card-foreground: 0.22 0.04 50;
+
+    /* Popover */
+    --popover: 0.99 0.008 75;
+    --popover-foreground: 0.22 0.04 50;
+
+    /* Primary: saffron orange */
+    --primary: 0.65 0.18 45;
+    --primary-foreground: 0.99 0 0;
+
+    /* Secondary: deep earthy green */
+    --secondary: 0.45 0.12 145;
+    --secondary-foreground: 0.99 0 0;
+
+    /* Muted: warm light sand */
+    --muted: 0.94 0.02 80;
+    --muted-foreground: 0.52 0.04 60;
+
+    /* Accent: turmeric yellow */
+    --accent: 0.82 0.15 85;
+    --accent-foreground: 0.22 0.04 50;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Border: warm sand */
+    --border: 0.88 0.03 75;
+    --input: 0.88 0.03 75;
+    --ring: 0.65 0.18 45;
+
+    /* Chart */
+    --chart-1: 0.65 0.18 45;
+    --chart-2: 0.55 0.14 145;
+    --chart-3: 0.82 0.15 85;
+    --chart-4: 0.6 0.16 30;
+    --chart-5: 0.72 0.13 160;
+
+    /* Sidebar */
+    --sidebar: 0.25 0.04 45;
+    --sidebar-foreground: 0.95 0.01 80;
+    --sidebar-primary: 0.65 0.18 45;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.35 0.06 45;
+    --sidebar-accent-foreground: 0.95 0.01 80;
+    --sidebar-border: 0.35 0.04 45;
+    --sidebar-ring: 0.65 0.18 45;
+
+    /* Custom kirana tokens */
+    --kirana-orange: 0.65 0.18 45;
+    --kirana-orange-deep: 0.55 0.2 40;
+    --kirana-green: 0.45 0.12 145;
+    --kirana-green-light: 0.75 0.1 145;
+    --kirana-turmeric: 0.82 0.15 85;
+    --kirana-cream: 0.97 0.015 80;
+    --kirana-brown: 0.35 0.07 50;
+    --kirana-gold: 0.78 0.14 70;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .kirana-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--kirana-orange)) 0%,
+      oklch(var(--kirana-orange-deep)) 50%,
+      oklch(var(--kirana-brown)) 100%
+    );
+  }
+
+  .kirana-pattern {
+    background-image: radial-gradient(
+        circle at 20% 20%,
+        oklch(var(--kirana-turmeric) / 0.15) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        oklch(var(--kirana-orange) / 0.1) 0%,
+        transparent 40%
+      );
+  }
+
+  .section-divider {
+    border-top: 2px solid;
+    @apply border-border;
+    background: linear-gradient(
+      to right,
+      transparent,
+      oklch(var(--kirana-orange) / 0.4),
+      transparent
+    );
+    height: 2px;
+    border: none;
+  }
+}
