@@ -762,7 +762,6 @@ function AboutSection() {
                       {isLoading ? (
                         <Skeleton className="h-4 w-full" />
                       ) : (
-                        storeInfo?.address ||
                         "Kusha Naranpur, Hadna, Hussainabad - 822116, Jharkhand"
                       )}
                     </p>
@@ -962,8 +961,7 @@ function ContactSection() {
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 text-kirana-orange mt-0.5 shrink-0" />
                 <span className="text-white/70 text-sm font-body">
-                  {storeInfo?.address ||
-                    "Kusha Naranpur, Hadna, Hussainabad - 822116, Jharkhand"}
+                  {"Kusha Naranpur, Hadna, Hussainabad - 822116, Jharkhand"}
                 </span>
               </li>
               <li className="flex items-center gap-3">
